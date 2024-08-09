@@ -25,8 +25,8 @@ Implement robust error handling to manage database connectivity issues and data 
  - stars: INTEGER DEFAULT 0 - Rating of the anime (0 to 5 stars).
  - name: TEXT NOT NULL - Name of the anime.
 
-*episodes Table:
- - episode_id: TEXT PRIMARY KEY - Unique identifier for the episode.
+* episodes Table:
+ * episode_id: TEXT PRIMARY KEY - Unique identifier for the episode.
  - anime_id: TEXT NOT NULL - Foreign key linking to the animes table.
  - watched: INTEGER DEFAULT 0 - Status indicating if the episode has been watched (0 for not watched, 1 for watched).
  - link: TEXT NOT NULL - URL link for the episode.
