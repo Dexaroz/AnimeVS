@@ -4,9 +4,10 @@ The Anime Management System is a Python-based application designed to facilitate
 
 ## Key Features
 * **Database Management:**
+  -Hola
 
- * **Setup and Configuration:** Create and configure the SQLite database with animes and episodes tables.
- * **Add Anime:** Insert new anime series into the database.
+ - **Setup and Configuration:** Create and configure the SQLite database with animes and episodes tables.
+ - **Add Anime:** Insert new anime series into the database.
  - **Add Episodes:** Add episodes for a specific anime, including links fetched from an external API.
  - **Update and Rate Anime:** Update the rating for an anime and mark episodes as watched.
 
