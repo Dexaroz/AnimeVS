@@ -120,7 +120,7 @@ def anime_exists(anime_id):
     db.close()
     return exists
 
-def search_anime_db():
+def search_anime_db(name):
     """
     Searches for an anime by name in the 'animes' table.
 
@@ -131,7 +131,6 @@ def search_anime_db():
     """
     db = connect_db()
     cursor = db.cursor()
-    name = input("Search an anime: ")
     cursor.execute('''
     SELECT anime_id, name
     FROM animes
@@ -261,6 +260,28 @@ def get_episodes_for_anime(anime_id):
     SELECT episode_id, watched, link
     FROM episodes
     WHERE anime_id = ?
+    ''', (anime_id,))
+
+    result = cursor.fetchall()
+    db.close()
+    return result
+
+def get_episodes_viewed_for_anime(anime_id):
+    """
+        Retrieves all viewed episodes for a specific anime from the 'episodes' table.
+
+        Args:
+            anime_id (str): The ID of the anime to fetch viewed episodes for.
+
+        Returns:
+            list: A list of tuples containing episode_id for each viewed episode.
+        """
+    db = connect_db()
+    cursor = db.cursor()
+    cursor.execute('''
+    SELECT episode_id
+    FROM episodes
+    WHERE anime_id = ? and watched = 1    
     ''', (anime_id,))
 
     result = cursor.fetchall()

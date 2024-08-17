@@ -11,12 +11,15 @@ class Terminal:
                              'anime_history' : show_animes,
                              'vote_anime' : vote_anime,
                              'delete_anime' : delete_animes,
+                             'help' : help,
                              'exit' : exit}
 
     def execute_command(self, command_input):
         try:
             command, *args = command_input.split()
             if command in self.commands:
+                if args:
+                    args = [" ".join(args)]
                 self.commands[command](*args)
             else:
                 print(f"Comando '{command}' no reconocido. Escribe 'help' para ver la lista de comandos.")

@@ -12,7 +12,7 @@ def main():
         else:
             menu = True
 
-        terminal = Terminal(menu=menu)
+        terminal = Terminal(menu=False)
         terminal.run()
     except Exception as e:
         print(f"Error in main: {e}")
